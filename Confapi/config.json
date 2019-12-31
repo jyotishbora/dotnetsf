@@ -1,0 +1,5 @@
+{
+	"ConnectionStrings": {
+    "ConfDbConnectionString": "server=localhost;Database=ConfDb;Integrated Security=true;MultipleActiveResultSets=true;"
+  } 
+} 

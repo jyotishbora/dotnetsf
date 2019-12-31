@@ -21,6 +21,11 @@ namespace Confapi
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+
+                }).ConfigureAppConfiguration(builder =>
+                {
+                    builder.Sources.Clear();
+                    builder.AddJsonFile("config.json", false, true);
+                } );
     }
 }
