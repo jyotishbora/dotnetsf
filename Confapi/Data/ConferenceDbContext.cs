@@ -19,5 +19,42 @@ namespace Confapi.Data
         public DbSet<Session> Sessions { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+
+            modelBuilder.Entity<Speaker>()
+                .HasData(new Speaker
+                {
+                    Id = 1,
+                    Email = "John@mail.com",
+                    Name = "John",
+                    Sessions = new List<Session>
+                    {
+                        new Session
+                        {
+                            Id = 1,
+                            Title = "Introduction to Asp.net core",
+                            Location = "Room1",
+                            Track = "Web Development",
+                            Comments = new List<Comment>
+                            {
+                                new Comment
+                                {
+                                    Id = 1,
+                                    CommenterName = "David",
+                                    CommentText = "Very Excited to attend this talk",
+                                    CommentTimeStamp = DateTime.Now
+                                   
+                                }
+                            }
+                        }
+                    }
+
+                });
+
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
