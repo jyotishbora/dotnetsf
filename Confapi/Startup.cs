@@ -29,6 +29,8 @@ namespace Confapi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddTransient<ConfSeeder>();
+            services.AddScoped<IConferenceRepository, ConferenceRepository>();
             services.AddDbContext<ConferenceDbContext>(builder => { builder.UseSqlServer(Configuration.GetConnectionString("ConfDbConnectionString")); });
 
         }

@@ -12,7 +12,7 @@ namespace Confapi.Data.Entities
         public string Title { get; set; }
         public string Track { get; set; }
         public string Location { get; set; }
-        public List<Comment> Comments { get; set; }
+        public Speaker Speaker { get; set; }
 
     }
 }

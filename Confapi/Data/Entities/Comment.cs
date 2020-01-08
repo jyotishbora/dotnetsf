@@ -12,5 +12,6 @@ namespace Confapi.Data.Entities
         public string CommenterName { get; set; }
         public string CommentText { get; set; }
         public DateTime CommentTimeStamp { get; set; }
+        public Session Session { get; set; }
     }
 }
