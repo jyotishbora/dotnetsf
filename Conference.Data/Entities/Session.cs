@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Conference.Data.Entities;
 
-namespace Confapi.Data.Entities
+namespace Conference.Data.Entities
 {
     public class Session
     {

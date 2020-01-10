@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Confapi.Data;
-using Confapi.Data.Entities;
+using Conference.Data;
+using Conference.Data.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Confapi.Controllers
 {
@@ -14,19 +15,35 @@ namespace Confapi.Controllers
     public class ConferenceController : ControllerBase
     {
         private readonly IConferenceRepository _conferenceRepository;
-        public ConferenceController(IConferenceRepository conferenceRepository)
+        private readonly ILogger<ConferenceController> _logger;
+        public ConferenceController(ILogger<ConferenceController> logger, IConferenceRepository conferenceRepository)
         {
+            _logger = logger;
             _conferenceRepository = conferenceRepository;
         }
     
 
         [HttpGet("speakers")]
-        public ActionResult<IEnumerable<Speaker>> GetAllSpeakers()
+        public async Task<ActionResult<IEnumerable<Speaker>>> GetAllSpeakers()
         {
-            return Ok(_conferenceRepository.GetAllSpeakers());
+            _logger.LogInformation("/speakers endpoint is called");
+            return Ok(await _conferenceRepository.GetAllSpeakersAsync());
         }
 
-      
-      
+        [HttpGet("speakers/{id}")]
+        public async Task<ActionResult<Speaker>> GetSpeaker(int id)
+        {
+            var speaker = await _conferenceRepository.GetSpeakerAsync(id);
+            if (speaker == null) return NotFound();
+            return Ok(speaker);
+        }
+
+        [HttpGet("speakers/{speakerId}/sessions")]
+        public async Task<ActionResult<Speaker>> GetSpeakerSessions(int speakerId)
+        {
+            var sessions = await _conferenceRepository.GetSpeakerSessionsAsync(speakerId);
+            if (sessions == null) return NotFound();
+            return Ok(sessions);
+        }
     }
 }

@@ -1,0 +1,8 @@
+C:\Users\jyotishka.bora\source\repos\dotnetsf\Conference.Data\obj\Debug\netstandard2.0\Conference.Data.AssemblyInfoInputs.cache
+C:\Users\jyotishka.bora\source\repos\dotnetsf\Conference.Data\obj\Debug\netstandard2.0\Conference.Data.AssemblyInfo.cs
+C:\Users\jyotishka.bora\source\repos\dotnetsf\Conference.Data\bin\Debug\netstandard2.0\Conference.Data.deps.json
+C:\Users\jyotishka.bora\source\repos\dotnetsf\Conference.Data\bin\Debug\netstandard2.0\Conference.Data.dll
+C:\Users\jyotishka.bora\source\repos\dotnetsf\Conference.Data\bin\Debug\netstandard2.0\Conference.Data.pdb
+C:\Users\jyotishka.bora\source\repos\dotnetsf\Conference.Data\obj\Debug\netstandard2.0\Conference.Data.dll
+C:\Users\jyotishka.bora\source\repos\dotnetsf\Conference.Data\obj\Debug\netstandard2.0\Conference.Data.pdb
+C:\Users\jyotishka.bora\source\repos\dotnetsf\Conference.Data\obj\Debug\netstandard2.0\Conference.Data.csprojAssemblyReference.cache

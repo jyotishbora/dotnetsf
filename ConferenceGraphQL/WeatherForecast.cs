@@ -1,6 +1,6 @@
 using System;
 
-namespace Confapi
+namespace ConferenceGraphQLApi
 {
     public class WeatherForecast
     {

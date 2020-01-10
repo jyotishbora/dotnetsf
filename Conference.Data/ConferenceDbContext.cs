@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Confapi.Data.Entities;
+﻿using Conference.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Confapi.Data
+namespace Conference.Data
 {
     public class ConferenceDbContext : DbContext
     {

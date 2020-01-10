@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Confapi.Controllers
+namespace ConferenceGraphQLApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
