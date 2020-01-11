@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ConferenceGraphql.Core.Schema.Queries;
+using GraphQL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +27,12 @@ namespace ConferenceGraphQLApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Register DepedencyResolver; this will be used when a GraphQL type needs to resolve a dependency
+            services.AddSingleton<IDependencyResolver>(c => new FuncDependencyResolver(type => c.GetRequiredService(type)));
+
+            // Query, Mutation and Subscription
+            services.AddSingleton<Query>();
+
             services.AddControllers();
         }
 

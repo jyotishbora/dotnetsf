@@ -1,17 +1,153 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphQL\\ConferenceGraphQLApi\\ConferenceGraphQLApi.csproj": {}
+    "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphQL\\ConferenceGraphQLApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphQL\\ConferenceGraphQLApi\\ConferenceGraphQLApi.csproj": {
+    "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphQL\\ConferenceGraphQLApi\\ConferenceGraphQLApi.csproj",
-        "projectName": "ConferenceGraphQLApi",
-        "projectPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphQL\\ConferenceGraphQLApi\\ConferenceGraphQLApi.csproj",
+        "projectUniqueName": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj",
+        "projectName": "Conference.Data",
+        "projectPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj",
         "packagesPath": "C:\\Users\\jyotishka.bora\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphQL\\ConferenceGraphQLApi\\obj\\",
+        "outputPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jyotishka.bora\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphql.Core\\ConferenceGraphql.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphql.Core\\ConferenceGraphql.Core.csproj",
+        "projectName": "ConferenceGraphql.Core",
+        "projectPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphql.Core\\ConferenceGraphql.Core.csproj",
+        "packagesPath": "C:\\Users\\jyotishka.bora\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphql.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jyotishka.bora\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj": {
+                "projectPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "GraphQL": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "GraphQL.Server.Transports.WebSockets": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphQL\\ConferenceGraphQLApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphQL\\ConferenceGraphQLApi.csproj",
+        "projectName": "ConferenceGraphQLApi",
+        "projectPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphQL\\ConferenceGraphQLApi.csproj",
+        "packagesPath": "C:\\Users\\jyotishka.bora\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphQL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -31,7 +167,14 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj": {
+                "projectPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj"
+              },
+              "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphql.Core\\ConferenceGraphql.Core.csproj": {
+                "projectPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphql.Core\\ConferenceGraphql.Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -42,6 +185,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "GraphQL": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
