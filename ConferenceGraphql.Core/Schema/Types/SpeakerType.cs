@@ -20,6 +20,7 @@ namespace ConferenceGraphql.Core.Schema.Types
             Field(s => s.City);
             Field(s => s.Company);
             Field(s => s.TwitterHandle);
+            Field<ListGraphType<EpisodeType>>("episodes", resolve: (context) => GetAllEpisodesForCharacter(episodeService, context.Source.characterName));
 
         }
 
