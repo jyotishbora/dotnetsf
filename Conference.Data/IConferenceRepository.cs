@@ -6,9 +6,9 @@ namespace Conference.Data
 {
     public interface IConferenceRepository
     {
-        Task<IEnumerable<Speaker>> GetAllSpeakersAsync();
+        Task<List<Speaker>> GetAllSpeakersAsync();
 
         Task<Speaker> GetSpeakerAsync(int id);
-        Task<IEnumerable<Session>> GetSpeakerSessionsAsync(int id);
+        Task<List<Session>> GetSpeakerSessionsAsync(int id);
     }
 }

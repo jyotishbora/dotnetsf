@@ -4,27 +4,34 @@ using System.Linq;
 using System.Threading.Tasks;
 using Confapi.Data;
 using Conference.Data.Entities;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace Conference.Data
 {
     public class ConferenceRepository : IConferenceRepository
     {
-        private readonly ConferenceDbContext _ctx;
+       
         private readonly ILogger<ConferenceRepository> _logger;
+        private readonly IServiceProvider _serviceProvider;
 
-        public ConferenceRepository(ConferenceDbContext ctx, ILogger<ConferenceRepository> logger)
+        public ConferenceRepository(IServiceProvider serviceProvider, ILogger<ConferenceRepository> logger)
         {
-            _ctx = ctx;
+            _serviceProvider = serviceProvider;
             _logger = logger;
         }
 
-        public async Task<IEnumerable<Speaker>> GetAllSpeakersAsync()
+        public async Task<List<Speaker>> GetAllSpeakersAsync()
         {
             try
             {
-                _logger.LogInformation("GetAllSpeaker is called");
-                return await Task.FromResult(_ctx.Speakers.AsEnumerable());
+                using (var scope = _serviceProvider.CreateScope())
+                {
+                    _logger.LogInformation("GetAllSpeaker is called");
+                    var dbCtx = scope.ServiceProvider.GetService<ConferenceDbContext>();
+                    return await Task.FromResult(dbCtx.Speakers.ToList());
+                }
+
             }
             catch (Exception e)
             {
@@ -37,8 +44,13 @@ namespace Conference.Data
         {
             try
             {
-                _logger.LogInformation("GetSpeakerAsync is called");
-                return await Task.FromResult(_ctx.Speakers.FirstOrDefault(s=>s.Id==id));
+                using (var scope = _serviceProvider.CreateScope())
+                {
+
+                    _logger.LogInformation("GetSpeakerAsync is called");
+                    var dbCtx = scope.ServiceProvider.GetService<ConferenceDbContext>();
+                    return await Task.FromResult(dbCtx.Speakers.FirstOrDefault(s => s.Id == id));
+                }
             }
             catch (Exception e)
             {
@@ -47,12 +59,16 @@ namespace Conference.Data
             }
         }
 
-        public async Task<IEnumerable<Session>> GetSpeakerSessionsAsync(int id)
+        public async Task<List<Session>> GetSpeakerSessionsAsync(int id)
         {
             try
             {
-                _logger.LogInformation("GetSpeakerSessionsAsync is called");
-                return await Task.FromResult(_ctx.Sessions.Where(s => s.Speaker.Id == id));
+                using (var scope = _serviceProvider.CreateScope())
+                {
+                    _logger.LogInformation("GetSpeakerSessionsAsync is called");
+                    var dbCtx = scope.ServiceProvider.GetService<ConferenceDbContext>();
+                    return await Task.FromResult(dbCtx.Sessions.Where(s => s.Speaker.Id == id).ToList());
+                }
             }
             catch (Exception e)
             {

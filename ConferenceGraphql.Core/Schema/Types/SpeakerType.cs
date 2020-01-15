@@ -11,7 +11,7 @@ namespace ConferenceGraphql.Core.Schema.Types
 {
     public class SpeakerType:ObjectGraphType<Speaker>
     {
-        public SpeakerType()
+        public SpeakerType(IConferenceRepository repository)
         {
             Field(s => s.Name);
             Field(s => s.Id);
@@ -20,9 +20,13 @@ namespace ConferenceGraphql.Core.Schema.Types
             Field(s => s.City);
             Field(s => s.Company);
             Field(s => s.TwitterHandle);
-            Field<ListGraphType<EpisodeType>>("episodes", resolve: (context) => GetAllEpisodesForCharacter(episodeService, context.Source.characterName));
+            Field<ListGraphType<SessionType>>("sessions", resolve: (context) => GetAllSessionsForSpeaker(repository, context.Source.Id));
 
         }
 
+        private static async Task<List<Session>> GetAllSessionsForSpeaker(IConferenceRepository repository, int speakerId)
+        {
+            return await repository.GetSpeakerSessionsAsync(speakerId);
+        }
     }
 }

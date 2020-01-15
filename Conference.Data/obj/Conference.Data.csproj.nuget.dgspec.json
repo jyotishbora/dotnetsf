@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj": {}
+    "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj": {
+    "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj",
         "projectName": "Conference.Data",
-        "projectPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj",
-        "packagesPath": "C:\\Users\\jyotishka.bora\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\obj\\",
+        "projectPath": "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj",
+        "packagesPath": "C:\\Users\\Jyotish\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\Conference.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\jyotishka.bora\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jyotish\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

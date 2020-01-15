@@ -44,6 +44,23 @@
           "lib/netstandard2.0/GraphQL.Server.Core.dll": {}
         }
       },
+      "GraphQL.Server.Transports.AspNetCore/3.4.0": {
+        "type": "package",
+        "dependencies": {
+          "GraphQL": "2.3.0",
+          "GraphQL.Server.Core": "3.4.0",
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.2",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
+          "Microsoft.Extensions.Options": "2.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/GraphQL.Server.Transports.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Server.Transports.AspNetCore.dll": {}
+        }
+      },
       "GraphQL.Server.Transports.Subscriptions.Abstractions/3.4.0": {
         "type": "package",
         "dependencies": {
@@ -76,6 +93,49 @@
         },
         "runtime": {
           "lib/netstandard2.0/GraphQL.Server.Transports.WebSockets.dll": {}
+        }
+      },
+      "GraphQL.Server.Ui.GraphiQL/3.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/GraphQL.Server.Ui.GraphiQL.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Server.Ui.GraphiQL.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Hosting.Abstractions/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Server.Abstractions": "2.0.2",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.2",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "2.0.1",
+          "Microsoft.Extensions.Hosting.Abstractions": "2.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "2.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Hosting.Server.Abstractions/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.0.2",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll": {}
         }
       },
       "Microsoft.AspNetCore.Http.Abstractions/2.0.2": {
@@ -345,6 +405,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Hosting.Abstractions/2.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll": {}
         }
       },
       "Microsoft.Extensions.Logging/3.1.0": {
@@ -2188,6 +2257,18 @@
         "lib/netstandard2.0/GraphQL.Server.Core.dll"
       ]
     },
+    "GraphQL.Server.Transports.AspNetCore/3.4.0": {
+      "sha512": "5ylKHdjGwwbv5RqoEfy2avJ78ptv6SIPu0xzReWHkFu1i/AnzcsihTNMGXgIBff2/S9KjxxUZY5cGxcRrTr5lA==",
+      "type": "package",
+      "path": "graphql.server.transports.aspnetcore/3.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "graphql.server.transports.aspnetcore.3.4.0.nupkg.sha512",
+        "graphql.server.transports.aspnetcore.nuspec",
+        "lib/netstandard2.0/GraphQL.Server.Transports.AspNetCore.dll"
+      ]
+    },
     "GraphQL.Server.Transports.Subscriptions.Abstractions/3.4.0": {
       "sha512": "Cwua3W2VM/PAZPmtdOaHlJOawkR/jR3G75QwhyleWEjcsEHaUrVY/hcvO1la+ZnJ6688tEbCkRnUUEF5a5RS/w==",
       "type": "package",
@@ -2210,6 +2291,44 @@
         "graphql.server.transports.websockets.3.4.0.nupkg.sha512",
         "graphql.server.transports.websockets.nuspec",
         "lib/netstandard2.0/GraphQL.Server.Transports.WebSockets.dll"
+      ]
+    },
+    "GraphQL.Server.Ui.GraphiQL/3.4.0": {
+      "sha512": "3xwVb6vHx2I4lM0DlpLwmdatC8n1eLq7aHXfo13oSQJKMvAVnmNuT3cHJL1RuKrcpHDQHmTwGvIQAeGFyL0R+A==",
+      "type": "package",
+      "path": "graphql.server.ui.graphiql/3.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "graphql.server.ui.graphiql.3.4.0.nupkg.sha512",
+        "graphql.server.ui.graphiql.nuspec",
+        "lib/netstandard2.0/GraphQL.Server.Ui.GraphiQL.dll"
+      ]
+    },
+    "Microsoft.AspNetCore.Hosting.Abstractions/2.0.2": {
+      "sha512": "358NTTCWJWpDKno3S85BU0hjxWQ8EzsyjZ5OSMi2XpQ9SrYwzTq6tlXSpVS3cV2RJ2Jx9lXc8uSXFwrOVyUieQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.hosting.abstractions/2.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Abstractions.xml",
+        "microsoft.aspnetcore.hosting.abstractions.2.0.2.nupkg.sha512",
+        "microsoft.aspnetcore.hosting.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Hosting.Server.Abstractions/2.0.2": {
+      "sha512": "tvz7D661JTyJXRxWLqOSH0s1zF9bLviZd14aA8poR+srvldS0gg1j62e7SaM5LQrUn+Z4dPwJqBtLXZDj5PtYw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.hosting.server.abstractions/2.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.xml",
+        "microsoft.aspnetcore.hosting.server.abstractions.2.0.2.nupkg.sha512",
+        "microsoft.aspnetcore.hosting.server.abstractions.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Http.Abstractions/2.0.2": {
@@ -2623,6 +2742,19 @@
         "microsoft.extensions.fileproviders.abstractions.nuspec"
       ]
     },
+    "Microsoft.Extensions.Hosting.Abstractions/2.0.2": {
+      "sha512": "gs+TNXCW05ujojZlQj2i9Fj00IAhXrgLZtgGM0XxoSoffgCGfGh7jX4kB/dnaot3xVdw84L1nE98bwQN7+kK8A==",
+      "type": "package",
+      "path": "microsoft.extensions.hosting.abstractions/2.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "microsoft.extensions.hosting.abstractions.2.0.2.nupkg.sha512",
+        "microsoft.extensions.hosting.abstractions.nuspec"
+      ]
+    },
     "Microsoft.Extensions.Logging/3.1.0": {
       "sha512": "P+8sKQ8L4ooL79sxxqwFPxGGC3aBrUDLB/dZqhs4J0XjTyrkeeyJQ4D4nzJB6OnAhy78HIIgQ/RbD6upOXLynw==",
       "type": "package",
@@ -2948,7 +3080,6 @@
       "path": "runtime.native.system.security.cryptography/4.0.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -2962,6 +3093,7 @@
       "path": "runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
@@ -2977,6 +3109,7 @@
       "path": "runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
@@ -2992,6 +3125,7 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
@@ -3914,6 +4048,7 @@
       "path": "system.dynamic.runtime/4.0.11",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4545,7 +4680,6 @@
       "path": "system.net.http/4.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/Xamarinmac20/_._",
@@ -4627,6 +4761,7 @@
       "path": "system.net.nameresolution/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4895,6 +5030,7 @@
       "path": "system.private.datacontractserialization/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.3/System.Private.DataContractSerialization.dll",
@@ -7296,6 +7432,7 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7375,29 +7512,30 @@
     ".NETCoreApp,Version=v3.1": [
       "Conference.Data >= 1.0.0",
       "ConferenceGraphql.Core >= 1.0.0",
-      "GraphQL >= 2.4.0"
+      "GraphQL >= 2.4.0",
+      "GraphQL.Server.Transports.AspNetCore >= 3.4.0",
+      "GraphQL.Server.Transports.WebSockets >= 3.4.0",
+      "GraphQL.Server.Ui.GraphiQL >= 3.4.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jyotishka.bora\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Jyotish\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphQL\\ConferenceGraphQLApi.csproj",
+      "projectUniqueName": "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\ConferenceGraphQL\\ConferenceGraphQLApi.csproj",
       "projectName": "ConferenceGraphQLApi",
-      "projectPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphQL\\ConferenceGraphQLApi.csproj",
-      "packagesPath": "C:\\Users\\jyotishka.bora\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphQL\\obj\\",
+      "projectPath": "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\ConferenceGraphQL\\ConferenceGraphQLApi.csproj",
+      "packagesPath": "C:\\Users\\Jyotish\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\ConferenceGraphQL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\jyotishka.bora\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jyotish\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -7411,11 +7549,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj": {
-              "projectPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj"
+            "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj": {
+              "projectPath": "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj"
             },
-            "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphql.Core\\ConferenceGraphql.Core.csproj": {
-              "projectPath": "C:\\Users\\jyotishka.bora\\source\\repos\\dotnetsf\\ConferenceGraphql.Core\\ConferenceGraphql.Core.csproj"
+            "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\ConferenceGraphql.Core\\ConferenceGraphql.Core.csproj": {
+              "projectPath": "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\ConferenceGraphql.Core\\ConferenceGraphql.Core.csproj"
             }
           }
         }
@@ -7432,6 +7570,18 @@
           "GraphQL": {
             "target": "Package",
             "version": "[2.4.0, )"
+          },
+          "GraphQL.Server.Transports.AspNetCore": {
+            "target": "Package",
+            "version": "[3.4.0, )"
+          },
+          "GraphQL.Server.Transports.WebSockets": {
+            "target": "Package",
+            "version": "[3.4.0, )"
+          },
+          "GraphQL.Server.Ui.GraphiQL": {
+            "target": "Package",
+            "version": "[3.4.0, )"
           }
         },
         "imports": [

@@ -12,10 +12,10 @@ namespace ConferenceGraphql.Core.Schema.Queries
 {
     public class Query:ObjectGraphType<object>
     {
-        public Query(IConferenceRepository resRepository)
+        public Query(IConferenceRepository repository)
         {
             Name = "Query";
-            Field<ListGraphType<SpeakerType>>("speakers", resolve: context => resRepository.GetAllSpeakersAsync());
+            Field<ListGraphType<SpeakerType>>("speakers", resolve: context => repository.GetAllSpeakersAsync());
         }
 
     }
