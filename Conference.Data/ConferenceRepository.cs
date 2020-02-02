@@ -76,5 +76,24 @@ namespace Conference.Data
                 return null;
             }
         }
+
+        public async Task<List<Comment>> GetSessionComments(int sessionId)
+        {
+
+            try
+            {
+                using (var scope = _serviceProvider.CreateScope())
+                {
+                    _logger.LogInformation("GetSpeakerSessionsAsync is called");
+                    var dbCtx = scope.ServiceProvider.GetService<ConferenceDbContext>();
+                    return await Task.FromResult(dbCtx.Comments.Where(s => s.Session.Id == sessionId).ToList());
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Failed to get all sessions: {e}");
+                return null;
+            }
+        }
     }
 }

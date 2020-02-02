@@ -5,3 +5,4 @@ C:\Users\Jyotish\Source\Repos\dotnetsf\Conference.Data\obj\Debug\netstandard2.0\
 C:\Users\Jyotish\Source\Repos\dotnetsf\Conference.Data\obj\Debug\netstandard2.0\Conference.Data.AssemblyInfo.cs
 C:\Users\Jyotish\Source\Repos\dotnetsf\Conference.Data\obj\Debug\netstandard2.0\Conference.Data.dll
 C:\Users\Jyotish\Source\Repos\dotnetsf\Conference.Data\obj\Debug\netstandard2.0\Conference.Data.pdb
+C:\Users\Jyotish\source\repos\dotnetsf\Conference.Data\obj\Debug\netstandard2.0\Conference.Data.csprojAssemblyReference.cache

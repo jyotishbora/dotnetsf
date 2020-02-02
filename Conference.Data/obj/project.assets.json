@@ -6178,11 +6178,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jyotish\\Source\\Repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj",
       "projectName": "Conference.Data",
-      "projectPath": "C:\\Users\\Jyotish\\Source\\Repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj",
+      "projectPath": "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\Conference.Data\\Conference.Data.csproj",
       "packagesPath": "C:\\Users\\Jyotish\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jyotish\\Source\\Repos\\dotnetsf\\Conference.Data\\obj\\",
+      "outputPath": "C:\\Users\\Jyotish\\source\\repos\\dotnetsf\\Conference.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -6234,7 +6234,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

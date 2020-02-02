@@ -10,5 +10,6 @@ namespace Conference.Data
 
         Task<Speaker> GetSpeakerAsync(int id);
         Task<List<Session>> GetSpeakerSessionsAsync(int id);
+        Task<List<Comment>> GetSessionComments(int sessionId);
     }
 }

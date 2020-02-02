@@ -39,11 +39,28 @@ namespace Confapi.Controllers
         }
 
         [HttpGet("speakers/{speakerId}/sessions")]
-        public async Task<ActionResult<Speaker>> GetSpeakerSessions(int speakerId)
+        public async Task<ActionResult<List<Session>>> GetSpeakerSessions(int speakerId)
         {
             var sessions = await _conferenceRepository.GetSpeakerSessionsAsync(speakerId);
             if (sessions == null) return NotFound();
             return Ok(sessions);
+        }
+
+        [HttpGet("sessions/{sessionId}/comments")]
+        public async Task<ActionResult<IEnumerable<Comment>>> GetSessionComments(int sessionId)
+        {
+            try
+            {
+                var comments = await _conferenceRepository.GetSessionComments(sessionId);
+                return Ok(comments);
+            }
+            catch (Exception e)
+            {
+                _logger.Log(LogLevel.Error, e, null);
+                return StatusCode(StatusCodes.Status500InternalServerError, e);
+            }
+
+
         }
     }
 }
