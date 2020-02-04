@@ -9,10 +9,11 @@ using GraphQL.Types;
 
 namespace ConferenceGraphql.Core.Schema.Types
 {
-    public class SpeakerType:ObjectGraphType<Speaker>
+    public class SpeakerType : ObjectGraphType<Speaker>
     {
         public SpeakerType(IConferenceRepository repository)
         {
+            
             Field(s => s.Name);
             Field(s => s.Id);
             Field(s => s.Email);
@@ -20,7 +21,8 @@ namespace ConferenceGraphql.Core.Schema.Types
             Field(s => s.City);
             Field(s => s.Company);
             Field(s => s.TwitterHandle);
-            Field<ListGraphType<SessionType>>("sessions", resolve: (context) => GetAllSessionsForSpeaker(repository, context.Source.Id));
+            Field<ListGraphType<SessionType>>().Name("sessions").ResolveAsync(async context => await GetAllSessionsForSpeaker(repository, context.Source.Id));
+            //Field<ListGraphType<SessionType>>("sessions", resolve: (context) => GetAllSessionsForSpeaker(repository, context.Source.Id));
 
         }
 

@@ -62,6 +62,7 @@ namespace ConferenceGraphQLApi
             // Types
             services.AddSingleton<SpeakerType>();
             services.AddSingleton<SessionType>();
+            services.AddSingleton<CommentType>();
             // Schema
             services.AddSingleton<ConferenceSchema>();
             // Register GraphQL services

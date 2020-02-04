@@ -14,8 +14,17 @@ namespace ConferenceGraphql.Core.Schema.Queries
     {
         public Query(IConferenceRepository repository)
         {
-            Name = "Query";
+            Name = "Root";
             Field<ListGraphType<SpeakerType>>("speakers", resolve: context => repository.GetAllSpeakersAsync());
+
+            FieldAsync<SpeakerType>("speaker",
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IntGraphType>>{ Name = "id"}),
+                resolve:   async context =>
+                {
+                    var id = context.GetArgument<int>("id");
+                    return await repository.GetSpeakerAsync(id);
+
+                });
         }
 
     }
