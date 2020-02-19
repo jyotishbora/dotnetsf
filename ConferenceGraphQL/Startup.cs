@@ -10,6 +10,7 @@ using ConferenceGraphql.Core.Schema.Types;
 using GraphQL;
 using GraphQL.Server;
 using GraphQL.Server.Ui.GraphiQL;
+using GraphQL.Server.Ui.Voyager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -104,6 +105,8 @@ namespace ConferenceGraphQLApi
 
             // use graphiQL middleware at default url / graphiql
             app.UseGraphiQLServer(new GraphiQLOptions());
+            // use voyager middleware at default url /ui/voyager
+            app.UseGraphQLVoyager(new GraphQLVoyagerOptions());
 
             app.UseEndpoints(endpoints =>
             {

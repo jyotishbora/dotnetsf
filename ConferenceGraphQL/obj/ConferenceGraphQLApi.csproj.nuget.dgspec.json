@@ -198,6 +198,10 @@
             "GraphQL.Server.Ui.GraphiQL": {
               "target": "Package",
               "version": "[3.4.0, )"
+            },
+            "GraphQL.Server.Ui.Voyager": {
+              "target": "Package",
+              "version": "[3.4.0, )"
             }
           },
           "imports": [

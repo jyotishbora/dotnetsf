@@ -107,6 +107,18 @@
           "lib/netstandard2.0/GraphQL.Server.Ui.GraphiQL.dll": {}
         }
       },
+      "GraphQL.Server.Ui.Voyager/3.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/GraphQL.Server.Ui.Voyager.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Server.Ui.Voyager.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Hosting.Abstractions/2.0.2": {
         "type": "package",
         "dependencies": {
@@ -2303,6 +2315,18 @@
         "graphql.server.ui.graphiql.3.4.0.nupkg.sha512",
         "graphql.server.ui.graphiql.nuspec",
         "lib/netstandard2.0/GraphQL.Server.Ui.GraphiQL.dll"
+      ]
+    },
+    "GraphQL.Server.Ui.Voyager/3.4.0": {
+      "sha512": "q+o42jnb3QCb3tzmwRcKuoSrTaaWMLmlcDpB6De0zgDL3KdBH+NSSkHc/YhN69FxpFWz0PekjkZt6zvCfPidqQ==",
+      "type": "package",
+      "path": "graphql.server.ui.voyager/3.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "graphql.server.ui.voyager.3.4.0.nupkg.sha512",
+        "graphql.server.ui.voyager.nuspec",
+        "lib/netstandard2.0/GraphQL.Server.Ui.Voyager.dll"
       ]
     },
     "Microsoft.AspNetCore.Hosting.Abstractions/2.0.2": {
@@ -7515,7 +7539,8 @@
       "GraphQL >= 2.4.0",
       "GraphQL.Server.Transports.AspNetCore >= 3.4.0",
       "GraphQL.Server.Transports.WebSockets >= 3.4.0",
-      "GraphQL.Server.Ui.GraphiQL >= 3.4.0"
+      "GraphQL.Server.Ui.GraphiQL >= 3.4.0",
+      "GraphQL.Server.Ui.Voyager >= 3.4.0"
     ]
   },
   "packageFolders": {
@@ -7580,6 +7605,10 @@
             "version": "[3.4.0, )"
           },
           "GraphQL.Server.Ui.GraphiQL": {
+            "target": "Package",
+            "version": "[3.4.0, )"
+          },
+          "GraphQL.Server.Ui.Voyager": {
             "target": "Package",
             "version": "[3.4.0, )"
           }
