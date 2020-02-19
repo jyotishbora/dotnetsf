@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConferenceGraphql.Core.Schema.Mutation;
 using ConferenceGraphql.Core.Schema.Queries;
 using GraphQL;
 
@@ -13,6 +14,7 @@ namespace ConferenceGraphql.Core.Schema
         public ConferenceSchema(IDependencyResolver resolver) : base(resolver)
         {
             Query = resolver.Resolve<Query>();
+            Mutation = resolver.Resolve<ConferenceDataMutaion>();
         }
     }
 }

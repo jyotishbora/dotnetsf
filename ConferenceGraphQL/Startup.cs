@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Conference.Data;
 using Conference.Data.Entities;
 using ConferenceGraphql.Core.Schema;
+using ConferenceGraphql.Core.Schema.Mutation;
 using ConferenceGraphql.Core.Schema.Queries;
 using ConferenceGraphql.Core.Schema.Types;
 using GraphQL;
@@ -42,38 +43,30 @@ namespace ConferenceGraphQLApi
             // Workaround until GraphQL can swap off Newtonsoft.Json and onto the new MS one.
             // Depending on whether you're using IIS or Kestrel, the code required is different
             // See: https://github.com/graphql-dotnet/graphql-dotnet/issues/1116
-            services.Configure<KestrelServerOptions>(options =>
-            {
-                options.AllowSynchronousIO = true;
-            });
-            services.Configure<IISServerOptions>(options =>
-            {
-                options.AllowSynchronousIO = true;
-            });
+            services.Configure<KestrelServerOptions>(options => { options.AllowSynchronousIO = true; });
+            services.Configure<IISServerOptions>(options => { options.AllowSynchronousIO = true; });
 #endif
 
-            // Register DepedencyResolver; this will be used when a GraphQL type needs to resolve a dependency
-            services.AddSingleton<IDependencyResolver>(c => new FuncDependencyResolver(type => c.GetRequiredService(type)));
-            services.AddSingleton<IConferenceRepository, ConferenceRepository>();
+
+            services.AddScoped<IConferenceRepository, ConferenceRepository>();
             services.AddDbContext<ConferenceDbContext>(builder => { builder.UseSqlServer(Configuration.GetConnectionString("ConfDbConnectionString")); });
 
-            // Query, Mutation and Subscription
-            services.AddSingleton<Query>();
 
-            // Types
-            services.AddSingleton<SpeakerType>();
-            services.AddSingleton<SessionType>();
-            services.AddSingleton<CommentType>();
+            // Register DepedencyResolver; this will be used when a GraphQL type needs to resolve a dependency
+            services.AddScoped<IDependencyResolver>(c => new FuncDependencyResolver(type => c.GetRequiredService(type)));
             // Schema
-            services.AddSingleton<ConferenceSchema>();
+
+            services.AddScoped<ConferenceSchema>();
             // Register GraphQL services
             services.AddGraphQL(options =>
-            {
-                options.EnableMetrics = true;
-                options.ExposeExceptions = true;
-            }).AddWebSockets();
+                {
+                    options.EnableMetrics = true;
+                    options.ExposeExceptions = true;
+                })
+                .AddGraphTypes(typeof(ConferenceSchema).Assembly, ServiceLifetime.Scoped)
+                .AddUserContextBuilder(context => context.User)
+                .AddWebSockets();
 
-            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -85,10 +78,6 @@ namespace ConferenceGraphQLApi
             }
 
             app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
 
 
             // Allow to display UI
@@ -108,10 +97,7 @@ namespace ConferenceGraphQLApi
             // use voyager middleware at default url /ui/voyager
             app.UseGraphQLVoyager(new GraphQLVoyagerOptions());
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            
         }
     }
 }

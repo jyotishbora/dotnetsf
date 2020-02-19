@@ -10,12 +10,14 @@ using GraphQL.Types;
 
 namespace ConferenceGraphql.Core.Schema.Queries
 {
-    public class Query:ObjectGraphType<object>
+    public class Query:ObjectGraphType
     {
         public Query(IConferenceRepository repository)
         {
             Name = "Root";
             Field<ListGraphType<SpeakerType>>("allSpeakers", resolve: context => repository.GetAllSpeakersAsync());
+
+
 
             FieldAsync<SpeakerType>("speaker",
                 arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IntGraphType>>{ Name = "id"}),

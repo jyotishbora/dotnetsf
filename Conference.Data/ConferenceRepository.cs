@@ -95,5 +95,34 @@ namespace Conference.Data
                 return null;
             }
         }
+
+        public async Task<Speaker> CreateSpeaker(Speaker speaker)
+        {
+            try
+            {
+                using (var scope = _serviceProvider.CreateScope())
+                {
+                    _logger.LogInformation("CreateSpeakerAsync is called");
+                    var dbCtx = scope.ServiceProvider.GetService<ConferenceDbContext>();
+                    dbCtx.Speakers.Add(new Speaker
+                    {
+                        Name = speaker.Name,
+                        Bio = speaker.Bio,
+                        City = speaker.City,
+                        Company = speaker.Company,
+                        Email = speaker.Email,
+                        TwitterHandle = speaker.TwitterHandle
+                    });
+                    await dbCtx.SaveChangesAsync();
+
+                    return dbCtx.Speakers.OrderByDescending(s => s.Id).First();
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Failed to get all sessions: {e}");
+                return null;
+            }
+        }
     }
 }
