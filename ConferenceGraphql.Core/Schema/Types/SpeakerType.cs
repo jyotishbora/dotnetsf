@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Conference.Data;
 using Conference.Data.Entities;
+using GraphQL.Introspection;
 using GraphQL.Types;
 
 namespace ConferenceGraphql.Core.Schema.Types
@@ -21,6 +22,8 @@ namespace ConferenceGraphql.Core.Schema.Types
             Field(s => s.City);
             Field(s => s.Company);
             Field(s => s.TwitterHandle);
+            Field<StringGraphType>().Name("Country").Resolve(_ => "US");
+            Field("Address", expression: _ => "11900 Biscayne Blvd");
             Field<ListGraphType<SessionType>>().Name("sessions").ResolveAsync(async context => await GetAllSessionsForSpeaker(repository, context.Source.Id));
             //Field<ListGraphType<SessionType>>("sessions", resolve: (context) => GetAllSessionsForSpeaker(repository, context.Source.Id));
 
