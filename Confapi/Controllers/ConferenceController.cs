@@ -16,17 +16,21 @@ namespace Confapi.Controllers
     {
         private readonly IConferenceRepository _conferenceRepository;
         private readonly ILogger<ConferenceController> _logger;
-        public ConferenceController(ILogger<ConferenceController> logger, IConferenceRepository conferenceRepository)
+        private readonly IConfService _confService;
+
+        public ConferenceController(ILogger<ConferenceController> logger, IConferenceRepository conferenceRepository, IConfService confService)
         {
             _logger = logger;
             _conferenceRepository = conferenceRepository;
+            _confService = confService;
         }
-    
+
 
         [HttpGet("speakers")]
         public async Task<ActionResult<IEnumerable<Speaker>>> GetAllSpeakers()
         {
             _logger.LogInformation("/speakers endpoint is called");
+            _confService.GetInfo();
             return Ok(await _conferenceRepository.GetAllSpeakersAsync());
         }
 

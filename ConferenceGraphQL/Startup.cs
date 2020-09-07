@@ -11,6 +11,7 @@ using ConferenceGraphql.Core.Schema.Types;
 using GraphQL;
 using GraphQL.Server;
 using GraphQL.Server.Ui.GraphiQL;
+using GraphQL.Server.Ui.Playground;
 using GraphQL.Server.Ui.Voyager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -55,7 +56,7 @@ namespace ConferenceGraphQLApi
             // Register DepedencyResolver; this will be used when a GraphQL type needs to resolve a dependency
             services.AddScoped<IDependencyResolver>(c => new FuncDependencyResolver(type => c.GetRequiredService(type)));
             // Schema
-
+            services.AddCors();
             services.AddScoped<ConferenceSchema>();
             // Register GraphQL services
             services.AddGraphQL(options =>
@@ -83,7 +84,12 @@ namespace ConferenceGraphQLApi
             // Allow to display UI
             app.UseDefaultFiles();
             app.UseStaticFiles();
-
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyHeader();
+                builder.AllowAnyOrigin();
+                builder.AllowAnyMethod();
+            });
             // This will enable WebSockets in Asp.Net core
             app.UseWebSockets();
 
@@ -94,6 +100,9 @@ namespace ConferenceGraphQLApi
 
             // use graphiQL middleware at default url / graphiql
             app.UseGraphiQLServer(new GraphiQLOptions());
+            // use graphql-playground middleware at default url /ui/playground
+            app.UseGraphQLPlayground(new GraphQLPlaygroundOptions());
+
             // use voyager middleware at default url /ui/voyager
             app.UseGraphQLVoyager(new GraphQLVoyagerOptions());
 
